@@ -4,5 +4,8 @@
     <string name="choice_text">Wybierz jedną z poniższych opcji:</string>
     <string name="bmi_button">Oblicz BMI</string>
     <string name="measurement_button">Zapisz pomiary</string>
-    <string name="bmi_info_text">Wprowadź poniższe dane, aby obliczyć swoje BMI:</string>
+    <string name="bmi_info_text">Uzupełnij poniższe dane, aby obliczyć swoje BMI:</string>
+    <string name="gender_text">Płeć</string>
+    <string name="female_button">Kobieta</string>
+    <string name="male_button">Mężczyzna</string>
 </resources>
