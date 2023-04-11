@@ -11,4 +11,8 @@
     <string name="weight_text">Waga [kg]</string>
     <string name="height_text">Wzrost [cm]</string>
     <string name="calculate_button">Oblicz BMI</string>
+    <string name="bmi_result_text">Twoje BMI obliczone na podstawie wprowadzonych danych wynosi:</string>
+    <string name="bmi_result"></string>
+    <string name="bmi_info">Zakresy BMI</string>
+    <string name="new_calculate_button">Wyczyść dane</string>
 </resources>
