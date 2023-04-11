@@ -8,4 +8,7 @@
     <string name="gender_text">Płeć</string>
     <string name="female_button">Kobieta</string>
     <string name="male_button">Mężczyzna</string>
+    <string name="weight_text">Waga [kg]</string>
+    <string name="height_text">Wzrost [cm]</string>
+    <string name="calculate_button">Oblicz BMI</string>
 </resources>
