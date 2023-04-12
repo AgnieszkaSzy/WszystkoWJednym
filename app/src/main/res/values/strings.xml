@@ -15,4 +15,5 @@
     <string name="bmi_result"></string>
     <string name="bmi_info">Zakresy BMI</string>
     <string name="new_calculate_button">Wyczyść dane</string>
+    <string name="measurement_info">Zapisz swoje wymiary:</string>
 </resources>
