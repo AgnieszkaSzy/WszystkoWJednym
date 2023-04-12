@@ -38,10 +38,11 @@ class MainActivityTest {
     }
 
     @Test
-    fun open_activity_bmi_test() {
+    fun open_activity_measurement_test() {
         onView(withId(R.id.measurement_button)).perform(click())
-        onView(withId(R.id.)).check(matches(isDisplayed()))
+        onView(withId(R.id.measurement_activity)).check(matches(isDisplayed()))
     }
+
 
 
 
