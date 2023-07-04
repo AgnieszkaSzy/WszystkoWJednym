@@ -11,8 +11,6 @@ fun calculate_bmi(weight: Double, height: Double, bmi_result: TextView) {
     val bmi = weight/(height*height*0.0001)
     bmi_result.setText(round_bmi(bmi).toString())
     bmi_result.visibility = TextView.VISIBLE
-
-
 }
 
 fun round_bmi(bmi: Double) : Double {

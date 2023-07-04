@@ -14,6 +14,7 @@ import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 
+
 @LargeTest
 @RunWith(AndroidJUnit4::class)
 class MainActivityTest {
@@ -24,6 +25,16 @@ class MainActivityTest {
     fun setUp() {
         scenario = launchActivity()
         scenario.moveToState(Lifecycle.State.RESUMED)
+    }
+
+    @Test
+    fun is_welcome_text_displayed_test() {
+        onView(withId(R.id.welcome_text)).check(matches(isDisplayed()))
+    }
+
+    @Test
+    fun is_choice_text_displayed_test() {
+        onView(withId(R.id.choice_text)).check(matches(isDisplayed()))
     }
 
     @Test
@@ -42,10 +53,5 @@ class MainActivityTest {
         onView(withId(R.id.measurement_button)).perform(click())
         onView(withId(R.id.measurement_activity)).check(matches(isDisplayed()))
     }
-
-
-
-
-
 
 }

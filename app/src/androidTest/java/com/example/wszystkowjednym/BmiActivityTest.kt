@@ -27,6 +27,11 @@ class BmiActivityTest {
     }
 
     @Test
+    fun is_bmi_info_text_displayed() {
+        onView(withId(R.id.bmi_info_text)).check(matches(isDisplayed()))
+    }
+
+    @Test
     fun is_oblicz_bmi_button_visible_test() {
         onView(withId(R.id.calculate_button)).check(matches(isDisplayed()))
     }
