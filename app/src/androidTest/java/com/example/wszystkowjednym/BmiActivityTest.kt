@@ -4,6 +4,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.test.core.app.ActivityScenario
 import androidx.test.core.app.launchActivity
 import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.action.ViewActions.*
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
@@ -53,12 +54,12 @@ class BmiActivityTest {
     }
 
     @Test
-    fun is_waga_text_visible_test() {
+    fun is_weight_text_visible_test() {
         onView(withId(R.id.weight_text)).check(matches(isDisplayed()))
     }
 
     @Test
-    fun is_wzrost_text_visible_test() {
+    fun is_height_text_visible_test() {
         onView(withId(R.id.height_text)).check(matches(isDisplayed()))
     }
 
@@ -71,4 +72,55 @@ class BmiActivityTest {
     fun is_clear_data_button_clickable_test() {
         onView(withId(R.id.clear_data_button)).check(matches(isClickable()))
     }
+
+    @Test
+    fun is_only_one_gender_selected_test() {
+        onView(withId(R.id.female_button)).perform(click())
+        onView(withId(R.id.male_button)).perform(click())
+        onView(withId(R.id.female_button)).check(matches(isNotChecked()))
+    }
+
+    @Test
+    fun is_height_input_accept_max_three_characters_test() {
+        val height = "1111"
+        onView(withId(R.id.height_input)).perform(typeText(height)).perform(closeSoftKeyboard())
+        onView(withId(R.id.height_input)).check(matches(withText("111")))
+    }
+
+    @Test
+    fun is_height_input_not_accept_letters_test() {
+        val letters = "ABC"
+        onView(withId(R.id.height_input)).perform(typeText(letters)).perform(closeSoftKeyboard())
+        onView(withId(R.id.height_input)).check(matches(withText("")))
+    }
+
+    @Test
+    fun is_weight_input_accept_max_three_characters_test() {
+        val height = "1111"
+        onView(withId(R.id.weight_input)).perform(typeText(height)).perform(closeSoftKeyboard())
+        onView(withId(R.id.weight_input)).check(matches(withText("111")))
+    }
+
+    @Test
+    fun is_weight_input_not_accept_letters_test() {
+        val letters = "ABC"
+        onView(withId(R.id.weight_input)).perform(typeText(letters)).perform(closeSoftKeyboard())
+        onView(withId(R.id.weight_input)).check(matches(withText("")))
+    }
+
+    @Test
+    fun is_clear_data_button_clears_data_test() {
+        onView(withId(R.id.female_button)).perform(click())
+        onView(withId(R.id.weight_input)).perform(typeText("60"))
+        onView(withId(R.id.height_input)).perform(typeText("160")).perform(closeSoftKeyboard())
+        onView(withId(R.id.clear_data_button)).perform(click())
+        onView(withId(R.id.female_button)).check(matches(isNotChecked()))
+        onView(withId(R.id.male_button)).check(matches(isNotChecked()))
+        onView(withId(R.id.weight_input)).check(matches(withText("")))
+        onView(withId(R.id.height_input)).check(matches(withText("")))
+
+    }
+
+
+
 }
