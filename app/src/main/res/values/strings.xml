@@ -16,4 +16,7 @@
     <string name="bmi_info">Zakresy BMI</string>
     <string name="clear_data_button">Wyczyść dane</string>
     <string name="measurement_info">Zapisz swoje wymiary:</string>
+    <string name="gender_error_info">Wybierz płeć</string>
+    <string name="weight_error_info">Wpisz wagę</string>
+    <string name="height_error_info">Wpisz wzrost</string>
 </resources>

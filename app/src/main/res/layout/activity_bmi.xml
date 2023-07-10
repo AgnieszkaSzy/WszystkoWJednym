@@ -90,11 +90,11 @@
         android:backgroundTint="@color/black"
         android:ems="5"
         android:inputType="number"
+        android:maxLength="3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.034"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/weight_text"
-        android:maxLength="3"
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <TextView
@@ -118,11 +118,11 @@
         android:backgroundTint="@color/black"
         android:ems="5"
         android:inputType="number"
+        android:maxLength="3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.66"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/height_text"
-        android:maxLength="3"
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <Button
@@ -192,7 +192,11 @@
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="1dp"
-        android:text="TextView"
+        android:layout_marginBottom="21dp"
+        android:text="@string/gender_error_info"
+        android:textColor="#D32F2F"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/weight_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gender_group" />
@@ -201,16 +205,24 @@
         android:id="@+id/weight_error_info"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="307dp" />
+        android:layout_marginStart="30dp"
+        android:text="@string/weight_error_info"
+        android:textColor="#D32F2F"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weight_input" />
 
     <TextView
         android:id="@+id/height_error_info"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="202dp"
-        tools:layout_editor_absoluteY="307dp" />
+        android:layout_marginStart="56dp"
+        android:text="@string/height_error_info"
+        android:textColor="#D32F2F"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/weight_error_info"
+        app:layout_constraintTop_toBottomOf="@+id/height_input" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
