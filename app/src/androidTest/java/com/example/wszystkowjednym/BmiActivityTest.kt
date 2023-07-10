@@ -12,7 +12,7 @@ import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import androidx.test.espresso.assertion.ViewAssertions.matches
-
+import org.hamcrest.Matchers.not
 
 
 @LargeTest
@@ -119,6 +119,23 @@ class BmiActivityTest {
         onView(withId(R.id.weight_input)).check(matches(withText("")))
         onView(withId(R.id.height_input)).check(matches(withText("")))
 
+    }
+
+    @Test
+    fun is_gender_weight_height_validation_display_error_info_test() {
+        onView(withId(R.id.calculate_button)).perform(click())
+        onView(withId(R.id.gender_error_info)).check(matches(isDisplayed()))
+        onView(withId(R.id.weight_error_info)).check(matches(isDisplayed()))
+        onView(withId(R.id.height_error_info)).check(matches(isDisplayed()))
+    }
+
+    @Test
+    fun is_clear_data_button_hide_validation_error_test() {
+        onView(withId(R.id.calculate_button)).perform(click())
+        onView(withId(R.id.clear_data_button)).perform(click())
+        onView(withId(R.id.gender_error_info)).check(matches(not(isDisplayed())))
+        onView(withId(R.id.weight_error_info)).check(matches(not(isDisplayed())))
+        onView(withId(R.id.height_error_info)).check(matches(not(isDisplayed())))
     }
 
 

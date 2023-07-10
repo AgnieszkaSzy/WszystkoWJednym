@@ -10,7 +10,6 @@ import java.math.RoundingMode
 fun calculate_bmi(weight: Double, height: Double, bmi_result: TextView) {
     val bmi = weight/(height*height*0.0001)
     bmi_result.setText(round_bmi(bmi).toString())
-    bmi_result.visibility = TextView.VISIBLE
 }
 
 fun round_bmi(bmi: Double) : Double {
@@ -18,11 +17,28 @@ fun round_bmi(bmi: Double) : Double {
     return bigDecimal.toDouble()
 }
 
-fun clear_data (weight: TextView, height: TextView, gender: RadioGroup, bmi_result: TextView, bmi_result_text: TextView, infoBmiButton: ImageButton) {
+fun display_bmi_information(bmi_result_text: TextView, bmi_result: TextView, result_interpretation: TextView, bmi_link_info: TextView, bmi_link: ImageButton) {
+    bmi_result_text.visibility = TextView.VISIBLE
+    bmi_result.visibility = TextView.VISIBLE
+    result_interpretation.visibility = TextView.VISIBLE
+    bmi_link_info.visibility = TextView.VISIBLE
+    bmi_link.visibility = TextView.VISIBLE
+}
+
+fun hide_bmi_information(bmi_result_text: TextView, bmi_result: TextView, result_interpretation: TextView, bmi_link_info: TextView, bmi_link: ImageButton) {
+    bmi_result_text.visibility = TextView.INVISIBLE
+    bmi_result.visibility = TextView.INVISIBLE
+    result_interpretation.visibility = TextView.INVISIBLE
+    bmi_link_info.visibility = TextView.INVISIBLE
+    bmi_link.visibility = TextView.INVISIBLE
+}
+
+fun clear_data (weight: TextView, height: TextView, gender: RadioGroup, gender_error_info: TextView, weight_error_info: TextView, height_error_info: TextView) {
     weight.setText("")
     height.setText("")
     gender.clearCheck()
-    bmi_result.setText("")
-    bmi_result_text.visibility = TextView.INVISIBLE
-    infoBmiButton.visibility = ImageButton.INVISIBLE
+    gender_error_info.visibility = TextView.INVISIBLE
+    weight_error_info.visibility = TextView.INVISIBLE
+    height_error_info.visibility = TextView.INVISIBLE
+
 }
