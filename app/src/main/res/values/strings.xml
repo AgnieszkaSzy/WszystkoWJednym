@@ -12,11 +12,19 @@
     <string name="height_text">Wzrost [cm]</string>
     <string name="calculate_button">Oblicz BMI</string>
     <string name="bmi_result_text">Twoje BMI obliczone na podstawie wprowadzonych danych wynosi:</string>
-    <string name="bmi_result"></string>
     <string name="bmi_info">Zakresy BMI</string>
     <string name="clear_data_button">Wyczyść dane</string>
     <string name="measurement_info">Zapisz swoje wymiary:</string>
     <string name="gender_error_info">Wybierz płeć</string>
     <string name="weight_error_info">Wpisz wagę</string>
     <string name="height_error_info">Wpisz wzrost</string>
+    <string name="bmi_less_than_16">Według wskaźnika BMI Twoje dane wskazują na: Wygłodzenie</string>
+    <string name="bmi_from_16_to_16.99">Według wskaźnika BMI Twoje dane wskazują na: Wychudzenie</string>
+    <string name="bmi_from_17_to_18.49">Według wskaźnika BMI Twoje dane wskazują na: Niedowaga</string>
+    <string name="bmi_from_18.5_to_24.99">Według wskaźnika BMI Twoje dane wskazują na: Pożądana waga ciała</string>
+    <string name="bmi_from_25_to_29.99">Według wskaźnika BMI Twoje dane wskazują na: Nadwaga</string>
+    <string name="bmi_from_30_to_34.99">Według wskaźnika BMI Twoje dane wskazują na: Otyłość I stopnia</string>
+    <string name="bmi_from_35_to_39.99">Według wskaźnika BMI Twoje dane wskazują na: Otyłość II stopnia</string>
+    <string name="bmi_more_than_40">Według wskaźnika BMI Twoje dane wskazują na: Otyłość III stopnia</string>
+
 </resources>

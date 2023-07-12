@@ -16,9 +16,11 @@ class BmiActivity : AppCompatActivity() {
                 gender_error_info.visibility = TextView.INVISIBLE
                 weight_error_info.visibility = TextView.INVISIBLE
                 height_error_info.visibility = TextView.INVISIBLE
-                val weight = weight_input.text.toString().toDouble()
-                val height = height_input.text.toString().toDouble()
+                var weight = weight_input.text.toString().toDouble()
+                var height = height_input.text.toString().toDouble()
+                var bmi: Double = weight/(height*height*0.0001)
                 calculate_bmi(weight, height, bmi_result)
+                interpret_bmi_result(bmi, result_interpretation)
                 display_bmi_information(bmi_result_text, bmi_result, result_interpretation, bmi_link_info, bmi_link )
 
 
