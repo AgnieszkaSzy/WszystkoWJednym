@@ -138,6 +138,28 @@ class BmiActivityTest {
         onView(withId(R.id.height_error_info)).check(matches(not(isDisplayed())))
     }
 
+    @Test
+    fun is_weight_error_disappear_after_entered_weight_test() {
+        onView(withId(R.id.calculate_button)).perform(click())
+        onView(withId(R.id.weight_input)).perform(typeText("45"))
+        onView(withId(R.id.weight_error_info)).check(matches(not(isDisplayed())))
+    }
+
+    @Test
+    fun is_height_error_disappear_after_entered_height_test() {
+        onView(withId(R.id.calculate_button)).perform(click())
+        onView(withId(R.id.height_input)).perform(typeText("150"))
+        onView(withId(R.id.height_error_info)).check(matches(not(isDisplayed())))
+    }
+
+    @Test
+    fun is_gender_error_disappear_after_click_gender_test() {
+        onView(withId(R.id.calculate_button)).perform(click())
+        onView(withId(R.id.female_button)).perform(click())
+        onView(withId(R.id.gender_error_info)).check(matches(not(isDisplayed())))
+    }
+
+
 
 
 }
