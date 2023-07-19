@@ -26,5 +26,6 @@
     <string name="bmi_from_30_to_34.99">Według wskaźnika BMI Twoje dane wskazują na: Otyłość I stopnia</string>
     <string name="bmi_from_35_to_39.99">Według wskaźnika BMI Twoje dane wskazują na: Otyłość II stopnia</string>
     <string name="bmi_more_than_40">Według wskaźnika BMI Twoje dane wskazują na: Otyłość III stopnia</string>
+    <string name="bmi_link_info">Aby dowiedzieć się więcej o bmi kliknij w link</string>
 
 </resources>

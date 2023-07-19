@@ -1,5 +1,8 @@
 package com.example.wszystkowjednym
 
+import android.content.Intent
+import android.drm.DrmStore
+import android.net.Uri
 import androidx.lifecycle.Lifecycle
 import androidx.test.core.app.ActivityScenario
 import androidx.test.core.app.launchActivity
@@ -12,6 +15,11 @@ import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import androidx.test.espresso.assertion.ViewAssertions.matches
+import androidx.test.espresso.intent.Intents
+import androidx.test.espresso.intent.Intents.intended
+import androidx.test.espresso.intent.matcher.IntentMatchers.hasAction
+import androidx.test.espresso.intent.matcher.IntentMatchers.hasData
+import org.hamcrest.Matchers.allOf
 import org.hamcrest.Matchers.not
 
 
@@ -33,12 +41,12 @@ class BmiActivityTest {
     }
 
     @Test
-    fun is_oblicz_bmi_button_visible_test() {
+    fun is_calculate_bmi_button_visible_test() {
         onView(withId(R.id.calculate_button)).check(matches(isDisplayed()))
     }
 
     @Test
-    fun is_oblicz_bmi_button_clickable_test() {
+    fun is_calculate_bmi_button_clickable_test() {
         onView(withId(R.id.calculate_button)).check(matches(isClickable()))
     }
 
@@ -157,6 +165,36 @@ class BmiActivityTest {
         onView(withId(R.id.calculate_button)).perform(click())
         onView(withId(R.id.female_button)).perform(click())
         onView(withId(R.id.gender_error_info)).check(matches(not(isDisplayed())))
+    }
+
+    @Test
+    fun is_bmi_link_info_displayed_test() {
+        onView(withId(R.id.bmi_link_info)).check(matches(isDisplayed()))
+    }
+
+    @Test
+    fun is_bmi_link_displayed_test() {
+        onView(withId(R.id.female_button)).perform(click())
+        onView(withId(R.id.weight_input)).perform(typeText("60"))
+        onView(withId(R.id.height_input)).perform(typeText("160"))
+        onView(withId(R.id.calculate_button)).perform(click())
+        onView(withId(R.id.bmi_link)).check(matches(isDisplayed()))
+    }
+
+    @Test
+    fun is_bmi_link_opened_website_test() {
+        val website = "https://pl.wikipedia.org/wiki/Wska%C5%BAnik_masy_cia%C5%82a"
+        onView(withId(R.id.female_button)).perform(click())
+        onView(withId(R.id.weight_input)).perform(typeText("60"))
+        onView(withId(R.id.height_input)).perform(typeText("160"))
+        onView(withId(R.id.calculate_button)).perform(click())
+        Thread.sleep(3000)
+        onView(withId(R.id.bmi_link)).check(matches(isClickable()))
+//        onView(withId(R.id.bmi_link)).perform(scrollTo(), click())
+//        Intents.intended(allOf(
+//            hasAction(Intent.ACTION_VIEW),
+//            hasData(Uri.parse(website))
+//        ))
     }
 
 

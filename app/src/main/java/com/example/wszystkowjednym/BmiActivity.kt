@@ -1,5 +1,8 @@
 package com.example.wszystkowjednym
 
+import android.content.Intent
+import android.content.Intent.ACTION_VIEW
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -75,6 +78,12 @@ class BmiActivity : AppCompatActivity() {
 
             override fun afterTextChanged(p0: Editable?) {}
         })
+
+        bmi_link.setOnClickListener{
+            val weburl = "https://pl.wikipedia.org/wiki/Wska%C5%BAnik_masy_cia%C5%82a"
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(weburl))
+            startActivity(intent)
+        }
 
         }
     }
