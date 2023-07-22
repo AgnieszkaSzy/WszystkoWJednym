@@ -16,7 +16,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.intent.Intents
-import androidx.test.espresso.intent.Intents.intended
+import androidx.test.espresso.intent.Intents.*
 import androidx.test.espresso.intent.matcher.IntentMatchers.hasAction
 import androidx.test.espresso.intent.matcher.IntentMatchers.hasData
 import org.hamcrest.Matchers.allOf
@@ -183,18 +183,20 @@ class BmiActivityTest {
 
     @Test
     fun is_bmi_link_opened_website_test() {
+        Intents.init()
         val website = "https://pl.wikipedia.org/wiki/Wska%C5%BAnik_masy_cia%C5%82a"
         onView(withId(R.id.female_button)).perform(click())
         onView(withId(R.id.weight_input)).perform(typeText("60"))
-        onView(withId(R.id.height_input)).perform(typeText("160"))
+        onView(withId(R.id.height_input)).perform(typeText("160"), closeSoftKeyboard())
         onView(withId(R.id.calculate_button)).perform(click())
-        Thread.sleep(3000)
         onView(withId(R.id.bmi_link)).check(matches(isClickable()))
-//        onView(withId(R.id.bmi_link)).perform(scrollTo(), click())
-//        Intents.intended(allOf(
-//            hasAction(Intent.ACTION_VIEW),
-//            hasData(Uri.parse(website))
-//        ))
+        onView(withId(R.id.bmi_link)).perform(click())
+        Thread.sleep(1000)
+        intended(allOf(
+            hasAction(Intent.ACTION_VIEW),
+            hasData(Uri.parse(website))
+        ))
+        Intents.release()
     }
 
 
