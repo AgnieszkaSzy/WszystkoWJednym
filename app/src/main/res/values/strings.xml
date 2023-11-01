@@ -14,7 +14,7 @@
     <string name="bmi_result_text">Twoje BMI obliczone na podstawie wprowadzonych danych wynosi:</string>
     <string name="bmi_info">Zakresy BMI</string>
     <string name="clear_data_button">Wyczyść dane</string>
-    <string name="measurement_info">Zapisz swoje wymiary:</string>
+    <string name="measurement_info">Zapisuj swoje wymiary i obserwuj jak się zmieniają:</string>
     <string name="gender_error_info">Wybierz płeć</string>
     <string name="weight_error_info">Wpisz wagę</string>
     <string name="height_error_info">Wpisz wzrost</string>
@@ -27,5 +27,15 @@
     <string name="bmi_from_35_to_39.99">Według wskaźnika BMI Twoje dane wskazują na: Otyłość II stopnia</string>
     <string name="bmi_more_than_40">Według wskaźnika BMI Twoje dane wskazują na: Otyłość III stopnia</string>
     <string name="bmi_link_info">Aby dowiedzieć się więcej o bmi kliknij w link</string>
+    <string name="measurementDateInfo">Data pomiaru</string>
+    <string name="waistMeasurementText">Talia [cm]</string>
+    <string name="hipsMeasurementText">Biodra [cm]</string>
+    <string name="bellyMeasurementText">Brzuch [cm]</string>
+    <string name="thighMeasurementText">Udo [cm]</string>
+    <string name="chestMeasurementText">Klatka piersiowa [cm]</string>
+    <string name="armMeasurementText">Ramię [cm]</string>
+    <string name="clearMeasurementButton">Wyczyść dane</string>
+    <string name="saveMeasurementButton">Zapisz dane</string>
+    <string name="historyButton">Zobacz historię pomiarów</string>
 
 </resources>
